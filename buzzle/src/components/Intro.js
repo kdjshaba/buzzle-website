@@ -2,15 +2,33 @@ import React from 'react'
 import creation from '../assets/images/creation.svg'
 import SvgLines from 'react-mt-svg-lines';
 import styled, { keyframes } from "styled-components";
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import {ReactComponent as ImportedComponent} from '../assets/images/rmask.svg';
-
+import WaitList from './Waitlist'
 const logo = document.querySelectorAll("#logo path")
 
 for(let i=0; i<logo.length; i++){
    console.log(`letter ${i} is ${logo[i].getTotalLength()}`);
 }
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1), 
+      top: "39em",
+      left:"45%",
+     
+    },
+  },
+
+
+}));
+
 function Intro() {
+
+  const classes = useStyles();
+
   return (
   
    <div className="container-fluid home">
@@ -54,10 +72,12 @@ function Intro() {
       <div className="subtext">
      <span className="buzzle"><span style={{fontWeight:600}}>Buzzle</span> is a ipadOS app that allows you to create </span>
      <span className="buzzle2">video effects efficiently and in real-time</span>
+
+    
      </div>
-   
+    <WaitList/>
       </div>
-      
+    
 //this is an example
 
 

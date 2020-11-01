@@ -127,8 +127,8 @@ class ResAppBar extends Component{
     const {classes} = this.props
     return (
       <div className={styleSheet.root}>
-        <AppBar position="fixed"  style={{ margin: 0, padding: 0, background: '#fffff', boxShadow: 'none',height:60}} >
-          <Toolbar style={{background:'white'}}>
+        <AppBar position="fixed"  style={{ margin: 0, padding: 0, background: 'none', boxShadow: 'none',height:60}} >
+          <Toolbar style={{background:'none'}}>
           
           </Toolbar>
         </AppBar>
@@ -143,9 +143,9 @@ class ResAppBar extends Component{
   destroyDrawer(){
     const {classes} = this.props
     return (
-      <AppBar  style={{flexGrow:0, margin: 0, padding: 0, background: 'white', boxShadow: 'none', height:100}}>
-        <Toolbar  style={{background: 'white', alignContent:'center'}}>
-        <img className={classes.image} src={buzzle}></img>
+      <AppBar  style={{flexGrow:0, margin: 0, padding: 0, background: 'none', boxShadow: 'none', height:100}}>
+        <Toolbar  style={{background: 'none', alignContent:'center'}}>
+        
             
 
         </Toolbar>

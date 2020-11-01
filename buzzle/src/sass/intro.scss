@@ -105,7 +105,7 @@
   margin: 0;
   padding: 0;
   top: 0em;
-  z-index: 1;
+
   display: inline;
   top: -0.6em;
   width: 3.5em;
@@ -151,7 +151,7 @@
   margin: 0;
   padding: 0;
   top: 0em;
-  z-index: 1;
+
   display: inline;
   top: -0.6em;
   width: 3.5em;
@@ -223,4 +223,10 @@
     fill: #623cea;
     stroke-width: 3;
   }
+}
+
+.try {
+  top: 39em;
+  left: 45%;
+  color: black;
 }

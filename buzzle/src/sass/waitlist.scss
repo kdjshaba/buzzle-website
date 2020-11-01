@@ -1,0 +1,238 @@
+$w: 500px;
+$ws: 300px;
+$duration: 0.2;
+$easing: ease-in-out;
+$primary: #1f0288;
+$secondary: #a28bf3;
+$white: #fff;
+$gray: white;
+.cancel {
+  padding: 2%;
+  margin: 5%;
+  font-family: Work Sans;
+  font-weight: 600;
+}
+.send {
+  padding: 2%;
+  margin-top: 5%;
+  font-family: Work Sans;
+  font-weight: 600;
+}
+
+.bg-contact3 {
+  width: 100%;
+  background-image: url("../assets/images/rectangle.png");
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  .container-contact3 {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn {
+  opacity: 1;
+
+  background-color: rgba(76, 175, 80, 0.3);
+  transition: width 0.5s, height 0.5s, opacity 0.2s;
+}
+.text {
+  width: $w;
+  height: $w;
+  z-index: 1;
+  text-align: center;
+  align-items: center;
+  padding-top: 120px;
+  padding-left: 50px;
+  position: relative;
+  width: 80%;
+  border: 0px;
+
+  .paragraph {
+    padding-left: 45px;
+    padding-bottom: 50px;
+    color: #ffffff;
+    font-family: Baloo 2;
+    font-weight: 600;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .btn {
+    position: absolute;
+    padding-top: 120px;
+    padding-left: 35px;
+    border-radius: 25px;
+    left: 50%;
+
+    top: 30em;
+
+    @media only screen and (max-width: 600px) {
+      top: 5em;
+      left: 30%;
+    }
+    @media only screen and (min-width: 1450px) {
+      top: 42em;
+    }
+  }
+
+  .paragraph2 {
+    position: absolute;
+    padding-left: 30px;
+    color: #ffffff;
+    padding-top: 0px;
+    font-family: Baloo 2;
+    font-weight: 400;
+    text-align: center;
+
+    font-size: 15px;
+
+    .bolded {
+      font-weight: 600;
+    }
+  }
+  [data-wipe] {
+    display: inline-block;
+    background-color: black;
+    position: absolute;
+    padding: 12px 18px;
+    text-decoration: none;
+    position: relative;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: white;
+    overflow: hidden;
+    font-size: 1vw;
+
+    &:before,
+    &:after {
+      content: attr(data-wipe);
+      padding-top: inherit;
+      padding-bottom: inherit;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      color: #445561;
+      background: white;
+      border-radius: 25px;
+    }
+
+    &:before {
+      left: 0;
+      text-indent: 18px;
+      width: 0;
+      border-radius: 25px;
+    }
+
+    &:after {
+      padding-left: inherit;
+      padding-right: inherit;
+      left: 100%;
+      text-indent: calc(-100% - 36px);
+      transition: $duration + s $easing;
+      border-radius: 25px;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+        transition: width $duration + $easing;
+        border-radius: 25px;
+      }
+
+      &:after {
+        left: 0;
+        text-indent: 0;
+        transition: 0s $duration + s $easing;
+        border-radius: 25px;
+      }
+    }
+  }
+}
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: white;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary, $secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+/* demo */
