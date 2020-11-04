@@ -14,7 +14,8 @@ export default class Waitlist extends Component {
   state={
         show:false,
         email:"",
-        emailError:""
+        emailError:"",
+        cleanEmailError:""
     }
     constructor(props){
         super(props);
@@ -97,8 +98,9 @@ render(){
             {this.state.emailError}
           </div>
     <input type="submit" className="send btn-grad" value="Send" />
-    <button className="cancel"  onClick={()=>{this.setState({show:!this.state.show})}} visible={this.state.show}>Cancel</button>
+    
   </form>
+  <button className="cancel" onClick={()=>{this.setState({show:!this.state.show})}}>Cancel</button>
   </div>
   </div>   
   </div>

@@ -82,8 +82,9 @@ const styleSheet = {
   image:{
 
    marginLeft: "auto", 
-   marginRight: "auto"
-    
+   marginRight: "auto",
+
+
   }
 
   
@@ -127,8 +128,8 @@ class ResAppBar extends Component{
     const {classes} = this.props
     return (
       <div className={styleSheet.root}>
-        <AppBar position="fixed"  style={{ margin: 0, padding: 0, background: 'none', boxShadow: 'none',height:60}} >
-          <Toolbar style={{background:'none'}}>
+        <AppBar position="static"  style={{ margin: 0, padding: 0, background: 'transparent', boxShadow: 'none',height:60}} >
+          <Toolbar style={{background:'transparent'}}>
           
           </Toolbar>
         </AppBar>
@@ -143,9 +144,9 @@ class ResAppBar extends Component{
   destroyDrawer(){
     const {classes} = this.props
     return (
-      <AppBar  style={{flexGrow:0, margin: 0, padding: 0, background: 'none', boxShadow: 'none', height:100}}>
-        <Toolbar  style={{background: 'none', alignContent:'center'}}>
-        
+      <AppBar position="static" style={{flexGrow:0, margin: 0, padding: 0, background: 'white', boxShadow: 'none', height:0}}>
+        <Toolbar  position="static" style={{background: 'white', alignContent:'center',  position:"static",}}>
+        <img style={{width:46, height:65, paddingTop: 30, marginLeft:30}} src={buzzle}></img>
             
 
         </Toolbar>
