@@ -1,54 +1,81 @@
-import React, { Component }  from 'react'
-import pencil from '../assets/images/pencil.png'
-
+import React, { Component } from "react";
+import pencil from "../assets/images/pencil.png";
+import Grid from "@mui/material/Grid";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import pitch from "../assets/images/pitch.svg";
+import change from "../assets/images/change.svg";
+import collab from "../assets/images/collab.svg";
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 export default class Product extends Component {
-    state={
-        show:false
-    }
-    constructor(props){
-        super(props);
-       
-    }
-  
-render (){
-  return (
-  <div>
-    
-   <div className="prod">
-   
-<span className="editing">Editing made more productive with the Apple Pencil</span>
+  state = {
+    show: false,
+  };
+  constructor(props) {
+    super(props);
+  }
 
-<span className="desc">Buzzle is the perfect add-on to your editing workflow</span>
+  render() {
+    return (
+      <div>
+        {/* <Grid
+          container
+          direction="column"
+          justifyContent="space-evenly"
+          alignItems="center"
+          spacing={20}
+        >
+          <Grid item>
+            <Grid container spacing={3}>
+              <Grid item xs> */}
+        <p className="editing">
+          Buzzle uses deep learning to make quick prototypes of your <br></br>
+          videos by simply uploading a script and design inspiration
+        </p>
 
-     <button className = "pencil" onClick={()=>{this.setState({show:!this.state.show})}}><img src={pencil}></img></button>
-    <span className="pen">click the pen to see <br></br> it get to work!</span>
-
-    <div className= {this.state.show?'fadeOut':'fadeIn'}>
-<span className="drawing">
-<svg width="602" height="371" viewBox="0 0 602 371" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="40.7254" width="565.83" height="295.508" rx="45" transform="rotate(7.92144 40.7254 0)" fill="#282727"/>
-<rect x="54.7501" y="14" width="534.741" height="273.918" rx="45" transform="rotate(7.92144 54.7501 14)" fill="#623CEA"/>
-</svg>
-
-</span>
-<span className="masking">Masking</span>
-<span className="path">Real-time path creation</span>
-
-
-    </div>
-<div className={this.state.show?'fadeIn':'fadeOut'} style={{position:"absolute" , zindex:-1}}>
-
-
-
-</div>
-
-
-      </div>  </div>
-//this is an example
-
-
-  );
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          spacing={3}
+          style={{ paddingTop: "30vh", position: "absolute" }}
+        >
+          <Grid item xs>
+            <img className="pics" src={pitch} />
+            <h1 className="title">Make better pitches.</h1>
+            <p className="subtitle">
+              Buzzle helps your team create quick <br></br>prototypes to present
+              to your clients. <br></br> Flexible too, because the client’s{" "}
+              <br></br> experience is paramount.
+            </p>
+          </Grid>
+          <Grid item xs>
+            <img className="pics" src={change} />
+            <h1 className="title">Make it your own.</h1>
+            <p className="subtitle">
+              Create multiple versions , edit <br></br> illustrations and import{" "}
+              <br></br>specific elements you have<br></br> control on everything
+            </p>
+          </Grid>
+          <Grid item xs>
+            <img className="pics" src={collab} />
+            <h1 className="title">Collaborate.</h1>
+            <p className="subtitle">
+              Collaborate on projects with <br></br>your peers, post requests to{" "}
+              <br></br> get feedback, and validate every detail before
+              production
+            </p>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
 }
-}
-

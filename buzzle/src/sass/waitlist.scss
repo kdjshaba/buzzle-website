@@ -63,14 +63,13 @@ $gray: white;
   transition: width 0.5s, height 0.5s, opacity 0.2s;
 }
 .text {
-  width: $w;
-  height: $w;
   z-index: 1;
   text-align: center;
   align-items: center;
-  padding-top: 120px;
-  padding-left: 50px;
-  position: relative;
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
   width: 80%;
   border: 0px;
 
@@ -85,20 +84,9 @@ $gray: white;
   }
 
   .btn {
-    position: absolute;
-    padding-top: 120px;
-    padding-left: 35px;
-    border-radius: 25px;
-    left: 50%;
-
-    top: 30em;
-
     @media only screen and (max-width: 600px) {
-      top: 5em;
-      left: 30%;
     }
     @media only screen and (min-width: 1450px) {
-      top: 42em;
     }
   }
 
