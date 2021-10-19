@@ -62,7 +62,7 @@ export default class Product extends Component {
             <h1 className="title">Make it your own.</h1>
             <p className="subtitle">
               Create multiple versions , edit <br></br> illustrations and import{" "}
-              <br></br>specific elements you have<br></br> control on everything
+              <br></br>specific elements.
             </p>
           </Grid>
           <Grid item xs>
@@ -70,7 +70,7 @@ export default class Product extends Component {
             <h1 className="title">Collaborate.</h1>
             <p className="subtitle">
               Collaborate on projects with <br></br>your peers, post requests to{" "}
-              <br></br> get feedback, and validate every detail before
+              <br></br> get feedback, and validate <br></br>every detail before
               production
             </p>
           </Grid>

@@ -25,7 +25,7 @@ const SectionWipesStyled = styled.div`
 
   .panel.green {
     background-color: #1c1c1e;
-    position: absolute;
+    position: absolute !important;
   }
 
   .panel.bordeaux {
@@ -33,6 +33,25 @@ const SectionWipesStyled = styled.div`
   }
 `;
 function App() {
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+  React.useEffect(() => {
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+      window.location.reload();
+    }, 1000);
+
+    window.addEventListener("resize", debouncedHandleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  });
   return (
     <div className="App">
       <SectionWipesStyled>
@@ -59,5 +78,14 @@ function App() {
     </div>
   );
 }
-
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
 export default App;
