@@ -5,7 +5,7 @@ import Intro from "./components/Intro";
 import Product from "./components/Product";
 import styled from "styled-components";
 import { Controller, Scene } from "react-scrollmagic";
-import SectionWipes from "./components/SectionWipes";
+import Footer from "./components/Footer.js";
 const SectionWipesStyled = styled.div`
   overflow: hidden;
   .panel {
@@ -34,47 +34,47 @@ const SectionWipesStyled = styled.div`
 `;
 function App() {
   const [dimensions, setDimensions] = React.useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
+    height: "100vh",
+    width: "100vw",
   });
-  React.useEffect(() => {
-    const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-      window.location.reload();
-    }, 1000);
+  // React.useEffect(() => {
+  //   const debouncedHandleResize = debounce(function handleResize() {
+  //     setDimensions({
+  //       height: "100vh",
+  //       width: "100vw",
+  //     });
+  //     //window.location.reload();
+  //   }, 1000);
 
-    window.addEventListener("resize", debouncedHandleResize);
+  //   window.addEventListener("resize", debouncedHandleResize);
 
-    return (_) => {
-      window.removeEventListener("resize", debouncedHandleResize);
-    };
-  });
+  //   return (_) => {
+  //     window.removeEventListener("resize", debouncedHandleResize);
+  //   };
+  // });
   return (
     <div className="App">
-      <SectionWipesStyled>
+      {/* <SectionWipesStyled>
         <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-          <Scene pin>
-            <div className="panel blue">
-              <span>
-                <NavBar />
-                <Intro />
-              </span>
-            </div>
-          </Scene>
-
-          <Scene pin>
+          <Scene pin> */}
+      <div className="panel blue">
+        <span>
+          <NavBar />
+          <Intro />
+        </span>
+        <span>
+          {" "}
+          <Product />
+        </span>
+      </div>
+      <Footer />
+      {/* <Scene pin>
             <div className="panel green">
-              <span>
-                {" "}
-                <Product />
-              </span>
+             
             </div>
-          </Scene>
-        </Controller>
-      </SectionWipesStyled>
+          </Scene> */}
+      {/* </Controller>
+      </SectionWipesStyled> */}
     </div>
   );
 }

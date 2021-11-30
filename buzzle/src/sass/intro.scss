@@ -11,38 +11,34 @@ body {
 .barriers {
   width: 100%;
   height: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  line-height: 125%;
   font-family: Montserrat;
   font-weight: 900;
-  font-size: 6vw;
-  position: fixed;
-  text-align: center;
+  font-size: 4em;
+  // position: fixed;
+  // text-align: center;
   color: rgb(16, 16, 16);
   @media only screen and (max-width: 600px) {
-    font-size: 8.5vw;
+    font-size: 2em;
   }
 }
 
 .buzzle {
-  position: fixed;
   width: 100%;
   height: auto;
-  font-size: 1.7vw;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -75%);
+  font-size: 1.2em;
+
   font-family: Work Sans;
   font-style: normal;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: rgb(16, 16, 16);
 
+  padding-top: 1em;
+
+  color: rgb(83, 83, 83);
   @media only screen and (max-width: 600px) {
-    top: 63%;
-    font-size: 2.3vw;
+    font-size: 0.5em;
   }
 }
 

@@ -45,10 +45,10 @@ export default class Product extends Component {
           direction="row"
           justifyContent="space-evenly"
           alignItems="center"
-          spacing={3}
-          style={{ paddingTop: "30vh", position: "absolute" }}
+          paddingBottom={20}
+          spacing={0}
         >
-          <Grid item xs>
+          <Grid spacing={0}>
             <img className="pics" src={pitch} />
             <h1 className="title">Make better pitches.</h1>
             <p className="subtitle">
@@ -57,7 +57,7 @@ export default class Product extends Component {
               <br></br> experience is paramount.
             </p>
           </Grid>
-          <Grid item xs>
+          <Grid spacing={0}>
             <img className="pics" src={change} />
             <h1 className="title">Make it your own.</h1>
             <p className="subtitle">
@@ -65,7 +65,7 @@ export default class Product extends Component {
               <br></br>specific elements.
             </p>
           </Grid>
-          <Grid item xs>
+          <Grid spacing={0}>
             <img className="pics" src={collab} />
             <h1 className="title">Collaborate.</h1>
             <p className="subtitle">
