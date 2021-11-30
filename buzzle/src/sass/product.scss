@@ -10,6 +10,9 @@
 
   //transform: translate(-50%, -15%);
   color: rgb(29, 29, 29);
+  @media only screen and (max-width: 600px) {
+    font-size: 0.8em;
+  }
 }
 .desc {
   height: auto;

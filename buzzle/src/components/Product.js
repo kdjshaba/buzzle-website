@@ -37,7 +37,7 @@ export default class Product extends Component {
               <Grid item xs> */}
         <p className="editing">
           Buzzle uses deep learning to make quick prototypes of your <br></br>
-          videos by simply uploading a script and design inspiration
+          videos from simply uploading a script and design inspiration
         </p>
 
         <Grid
